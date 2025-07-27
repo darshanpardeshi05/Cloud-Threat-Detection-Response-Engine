@@ -1,0 +1,44 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowLogging",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Sid": "AllowSNSPublishing",
+            "Effect": "Allow",
+            "Action": "sns:Publish",
+            "Resource": "arn:aws:sns:REGION:ACCOUNT_ID:threat-alerts-darshan"
+        },
+        {
+            "Sid": "AllowGuardDutyReadAccess",
+            "Effect": "Allow",
+            "Action": [
+                "guardduty:GetFindings",
+                "guardduty:ListFindings"
+            ],
+            "Resource": "arn:aws:guardduty:REGION:ACCOUNT_ID:detector/*"
+        },
+        {
+            "Sid": "AllowKMSDecryptIfEncrypted",
+            "Effect": "Allow",
+            "Action": [
+                "kms:Decrypt",
+                "kms:GenerateDataKey"
+            ],
+            "Resource": "arn:aws:kms:REGION:ACCOUNT_ID:key/*",
+            "Condition": {
+                "StringEquals": {
+                    "kms:ViaService": "sns.REGION.amazonaws.com"
+                }
+            }
+        }
+    ]
+}

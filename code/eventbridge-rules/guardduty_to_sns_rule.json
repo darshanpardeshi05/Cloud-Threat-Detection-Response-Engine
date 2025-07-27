@@ -1,0 +1,7 @@
+{
+  "detail-type": ["GuardDuty Finding"],
+  "source": ["aws.guardduty"],
+  "detail": {
+    "severity": [{"numeric": [">=", 4]}]
+  }
+}
