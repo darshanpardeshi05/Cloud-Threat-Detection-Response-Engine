@@ -8,7 +8,7 @@ A serverless pipeline to detect and respond to cloud threats (S3 exposures, port
 - Attack simulations (Nmap scans, S3 misconfigurations).
 
 ## Architecture
-![System Architecture](architecture-diagrams/architecture.png)
+![System Architecture](architecture-diagrams/image.png)
 
 ## Setup
 1. **Prerequisites**: AWS account with permissions for GuardDuty, Lambda, etc.
@@ -24,7 +24,7 @@ A serverless pipeline to detect and respond to cloud threats (S3 exposures, port
 ## Screenshots
 | Detection | Alert | Investigation |
 |-----------|-------|---------------|
-| ![GuardDuty Finding](screenshots/guardduty_finding.png) | ![SNS Alert](screenshots/sns_alert.png) | ![Macie Finding](screenshots/macie_finding.png) |
+| ![GuardDuty Finding](screenshots/guardduty_finding.png) | ![SNS Alert](screenshots/sns_alert.jpg) | ![Macie Finding](screenshots/macie_finding.png) |
 
 ## License
 MIT
